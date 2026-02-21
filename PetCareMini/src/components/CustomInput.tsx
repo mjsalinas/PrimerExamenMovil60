@@ -68,9 +68,10 @@ export default function CustomInput({
               color="#607D8B"
             />
           </TouchableOpacity>
-        )}
+        )} 
+           <Text style={styles.errorText}>{error}</Text>
       </View>
-      <Text style={styles.errorText}>{error}</Text>
+   
   );
 }
 
