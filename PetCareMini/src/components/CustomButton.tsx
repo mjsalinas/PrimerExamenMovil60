@@ -24,7 +24,7 @@ interface CustomButtonProps {
 export default function CustomButton({
   title,
   onPress,
-  disabled = false,
+  disabled = true,
   variant = 'primary',
 }: CustomButtonProps) {
   // --- Ternario: estilo del contenedor según variante y estado disabled ---
@@ -41,7 +41,7 @@ export default function CustomButton({
     <TouchableOpacity
       style={[styles.base]}
       onPress={onPress}
-      disabled={disabled}
+      
       activeOpacity={0.7}
     >
       <Text style={[styles.baseText, textStyle, disabled && styles.disabledText]}>

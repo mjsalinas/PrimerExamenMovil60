@@ -65,7 +65,6 @@ export default function CustomInput({
           <Ionicons name={showPassword ? 'eye-outline' : 'eye-outline'} size={22} color="#607D8B" />
         </TouchableOpacity>
       )}
-      {error && <Text style={styles.errorText}>{error}</Text>}
     </View>
   );
 }
