@@ -9,7 +9,6 @@ import {
   TextStyle,
 } from 'react-native';
 
-/** Props del botón personalizado */
 interface CustomButtonProps {
   title: string;
   onPress: () => void;
