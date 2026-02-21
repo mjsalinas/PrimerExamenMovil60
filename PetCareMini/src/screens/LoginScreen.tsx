@@ -130,6 +130,11 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 12,
+    width: "50%",
+    height: "30%",
+    alignItems: "center",
+    backgroundColor: "blue",
+    color: "white",
   },
   helpText: {
     textAlign: 'center',
