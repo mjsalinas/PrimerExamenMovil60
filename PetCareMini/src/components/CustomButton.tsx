@@ -13,6 +13,7 @@ import {
 interface CustomButtonProps {
   title: string;
   onPress: () => void;
+  onClick: () => void;
   disabled?: boolean;
   variant: 'primary' | 'secondary';
 }
@@ -24,6 +25,7 @@ interface CustomButtonProps {
 export default function CustomButton({
   title,
   onPress,
+  onClick,
   disabled = false,
   variant = 'primary',
 }: CustomButtonProps) {
