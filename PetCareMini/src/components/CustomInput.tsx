@@ -70,7 +70,7 @@ export default function CustomInput({
           </TouchableOpacity>
         )}
       </View>
-      <Text style={styles.errorText}>{error}</Text>
+      //<Text style={styles.errorText}>{error}</Text>
   );
 }
 
