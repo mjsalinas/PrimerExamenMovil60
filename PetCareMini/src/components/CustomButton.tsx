@@ -41,7 +41,6 @@ export default function CustomButton({
     <TouchableOpacity
       style={[styles.base]}
       onPress={onPress}
-      disabled={disabled}
       activeOpacity={0.7}
     >
       <Text style={[styles.baseText, textStyle, disabled && styles.disabledText]}>
