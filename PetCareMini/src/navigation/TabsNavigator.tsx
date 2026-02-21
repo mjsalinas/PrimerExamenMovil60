@@ -13,10 +13,7 @@ export type TabParamList = {
   History: undefined;
 };
 
-const Tab = createBottomTabNavigator<TabParamList>(
-
-  
-);
+const Tab = createBottomTabNavigator<TabParamList>();
 
 export default function TabsNavigator() {
   return (
