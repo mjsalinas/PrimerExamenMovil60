@@ -1,14 +1,15 @@
 // ============================================
 // Componente reutilizable: CustomInput
 // ============================================
-import { useState } from 'react';
-import {
+import React, { useState } from 'react';
+import {  
   View,
   TextInput,
   Text,
   TouchableOpacity,
   StyleSheet,
   KeyboardTypeOptions,
+  
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -45,32 +46,27 @@ export default function CustomInput({
   const isSecure = type === 'password' && !showPassword;
 
   return (
-      <View style={[styles.inputWrapper, error ? styles.inputError : styles.inputNormal]}>
-        <TextInput
-          style={styles.input}
-          value={value}
-          placeholder={placeholder}
-          onChangeText={onChangeText}
-          keyboardType={getKeyboardType()}
-          secureTextEntry={isSecure}
-          autoCapitalize={type === 'email' ? 'none' : 'sentences'}
-          placeholderTextColor="#90A4AE"
-        />
-        {/* Toggle ojo para password */}
-        {type === 'password' && (
-          <TouchableOpacity
-            onPress={() => setShowPassword(!showPassword)}
-            style={styles.eyeButton}
-          >
-            <Ionicons
-              name={showPassword ? 'eye-outline' : 'eye-outline'}
-              size={22}
-              color="#607D8B"
-            />
-          </TouchableOpacity>
-        )}
-      </View>
-      <Text style={styles.errorText}>{error}</Text>
+  <View style={[styles.inputWrapper, error ? styles.inputError : styles.inputNormal]}>
+      <TextInput
+        style={styles.input}
+        value={value}
+        placeholder={placeholder}
+        onChangeText={onChangeText}
+        keyboardType={getKeyboardType()}
+        secureTextEntry={isSecure}
+        autoCapitalize={type === 'email' ? 'none' : 'sentences'}
+        placeholderTextColor="#90A4AE"
+      />
+
+      {/* Toggle ojo para password */}
+      
+       {type === 'password' && (
+        <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeButton}>
+          <Ionicons name={showPassword ? 'eye-outline' : 'eye-outline'} size={22} color="#607D8B" />
+        </TouchableOpacity>
+      )}
+      {error && <Text style={styles.errorText}>{error}</Text>}
+    </View>
   );
 }
 
