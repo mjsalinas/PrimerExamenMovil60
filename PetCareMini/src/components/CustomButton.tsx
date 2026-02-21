@@ -1,6 +1,7 @@
 // ============================================
 // Componente reutilizable: CustomButton
 // ============================================
+
 import React from 'react';
 import {
   TouchableOpacity,
@@ -8,7 +9,9 @@ import {
   StyleSheet,
   ViewStyle,
   TextStyle,
+  requireNativeComponent,
 } from 'react-native';
+
 
 interface CustomButtonProps {
   title: string;
@@ -21,6 +24,7 @@ interface CustomButtonProps {
  * Botón reutilizable con soporte para variantes y estado deshabilitado.
  * Usa operadores ternarios para cambiar estilos según la variante y si está deshabilitado.
  */
+
 export default function CustomButton({
   title,
   onPress,
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   primaryText: {
-    color: '#FFFFFF',
+    color: '#260e0e',
   },
   secondaryText: {
     color: '#4A90D9',

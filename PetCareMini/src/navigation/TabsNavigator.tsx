@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator<TabParamList>();
 
 export default function TabsNavigator() {
   return (
-    <Tab.Navigator
+    <Tabs.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarActiveTintColor: '#4A90D9',
@@ -56,7 +56,7 @@ export default function TabsNavigator() {
       />
       <Tab.Screen
         name="AddActivity"
-        component={AddActivity}
+        component={AddActivityTab}
         options={{ tabBarLabel: 'Agregar' }}
       />
       <Tab.Screen

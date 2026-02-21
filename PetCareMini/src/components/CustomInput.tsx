@@ -11,6 +11,7 @@ import {
   KeyboardTypeOptions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import React = require('react');
 
 /** Props del input personalizado */
 interface CustomInputProps {

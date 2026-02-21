@@ -1,6 +1,7 @@
 // ============================================
 // Componente reutilizable: ScreenContainer
 // ============================================
+import React = require('react');
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
