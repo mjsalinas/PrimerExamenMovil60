@@ -63,13 +63,13 @@ export default function CustomInput({
             style={styles.eyeButton}
           >
             <Ionicons
-              name={showPassword ? 'eye-outline' : 'eye-outline'}
+              name={showPassword ? 'eye-off-outline' : 'eye-outline'}
               size={22}
               color="#607D8B"
             />
           </TouchableOpacity>
         )} 
-           <Text style={styles.errorText}>{error}</Text>
+     {error ? <Text style={styles.errorText}>{error}</Text> : null}
       </View>
    
   );

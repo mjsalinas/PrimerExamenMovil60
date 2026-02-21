@@ -41,7 +41,11 @@ export default function CustomButton({
   return (
 
     <TouchableOpacity
-      style={[styles.base]}
+       style={[
+    styles.base,
+    variant === 'primary' ? styles.primary : styles.secondary,
+    disabled && styles.disabledButton,
+  ]}
       onPress={onPress}
       disabled={disabled}
       activeOpacity={0.7}
@@ -87,5 +91,6 @@ const styles = StyleSheet.create({
   },
   disabledText: {
     color: '#90A4AE',
-  },
+  }, 
+  disabledButton: { backgroundColor: '#B0BEC5' },
 });
