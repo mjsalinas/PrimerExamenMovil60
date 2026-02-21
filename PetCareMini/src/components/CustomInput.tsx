@@ -45,6 +45,7 @@ export default function CustomInput({
   const isSecure = type === 'password' && !showPassword;
 
   return (
+    <View>
       <View style={[styles.inputWrapper, error ? styles.inputError : styles.inputNormal]}>
         <TextInput
           style={styles.input}
@@ -71,6 +72,7 @@ export default function CustomInput({
         )}
       </View>
       <Text style={styles.errorText}>{error}</Text>
+    </View>
   );
 }
 
