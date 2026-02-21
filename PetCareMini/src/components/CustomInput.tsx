@@ -9,8 +9,8 @@ import {
   TouchableOpacity,
   StyleSheet,
   KeyboardTypeOptions,
-} from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 /** Props del input personalizado */
 interface CustomInputProps {
@@ -56,8 +56,9 @@ export default function CustomInput({
           autoCapitalize={type === 'email' ? 'none' : 'sentences'}
           placeholderTextColor="#90A4AE"
         />
+        
         {/* Toggle ojo para password */}
-        {type === 'password' && (
+        {type === 'password' && ( 
           <TouchableOpacity
             onPress={() => setShowPassword(!showPassword)}
             style={styles.eyeButton}
