@@ -74,7 +74,7 @@ export default function LoginScreen({ navigation }: any) {
           <CustomButton
             title="Iniciar Sesión"
             onPress={handleLogin}
-            // disabled={isFormValid}
+            // disabled={!isFormValid}
             variant="primary"
           />
         </View>
