@@ -14,6 +14,7 @@ import { Activity } from '../types';
  * Demuestra validación condicionada y estado local.
  */
 export default function AddActivityTab({ navigation }: any) {
+  
   const { addActivity } = useActivities();
 
   // --- Estado local ---
@@ -33,7 +34,9 @@ export default function AddActivityTab({ navigation }: any) {
   /** Guardar la actividad */
   const handleSave = () => {
     setSubmitted(true);
-    if (!isValid) return;
+    if (!isValid){ 
+        Alert.alert("Formulario Incompleto","Debes Ingresar Actividad")
+      return;}
 
     const newActivity: Activity = {
       id: Date.now().toString(),
@@ -90,7 +93,9 @@ export default function AddActivityTab({ navigation }: any) {
             onPress={handleSave}
             disabled={isValid}
             variant="primary"
+            
           />
+          
         </View>
       </View>
     </ScreenContainer>
