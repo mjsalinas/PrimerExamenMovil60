@@ -7,6 +7,7 @@ import {
   StyleSheet,
   ViewStyle,
   TextStyle,
+  Alert,
 } from 'react-native';
 
 /** Props del botón personalizado */
@@ -38,6 +39,7 @@ export default function CustomButton({
     variant === 'primary' ? styles.primaryText : styles.secondaryText;
 
   return (
+
     <TouchableOpacity
       style={[styles.base]}
       onPress={onPress}

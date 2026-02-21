@@ -13,13 +13,15 @@ import CustomButton from '../components/CustomButton';
  */
 export default function LoginScreen({ navigation }: any) {
   // --- Estado local ---
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  // --- Validaciones ---
   const emailError =
-    submitted && !email.includes('@') ? 'El correo debe incluir @' : '';
+    submitted && !email.includes('@') ? 'El correo debe incluir @' : '';  
+
+  // --- Validaciones ---
+
 
   const passwordError =
     submitted && password.length < 6
@@ -30,14 +32,16 @@ export default function LoginScreen({ navigation }: any) {
   const isFormValid = email.includes('@') && password.length >= 6;
 
   /** Manejar el intento de inicio de sesión */
-  const handleLogin = () => {
+  const handleLogin = () => { 
     setSubmitted(true);
     if (isFormValid) {
-      // Navegar a la tab Home dentro del TabsNavigator
       navigation.navigate('Tabs', { screen: 'Home' });
     }
-  };
+  }; 
 
+
+  
+ 
   return (
     <ScreenContainer>
       <View style={styles.logoContainer}>
@@ -54,7 +58,7 @@ export default function LoginScreen({ navigation }: any) {
 
         {/* Input de correo */}
         <CustomInput
-          value={''}
+          value={email}
           placeholder="Correo electrónico"
           onChangeText={setEmail}
           type="email"
@@ -70,11 +74,11 @@ export default function LoginScreen({ navigation }: any) {
           error={passwordError}
         />
 
-        <View style={styles.buttonContainer}>
+        <View style={[styles.buttonContainer, !isFormValid && styles.buttonContainerDisabled]}>
           <CustomButton
             title="Iniciar Sesión"
             onPress={handleLogin}
-            disabled={isFormValid}
+            disabled={!isFormValid}
             variant="primary"
           />
         </View>
@@ -83,8 +87,20 @@ export default function LoginScreen({ navigation }: any) {
           <Text style={styles.helpText}>
             Por favor, corrige los errores para continuar.
           </Text>
-        ) : null}
-      </View>
+        ) : null} 
+
+      {isFormValid && submitted ? (
+          <Text style={styles.helpText}>
+            Por favor, corrige los errores para continuar.
+          </Text>
+        ) : null} 
+
+          {emailError ? (
+          <Text style={styles.helpText}>
+            {emailError}
+          </Text>
+        ) : null} 
+      </View> 
     </ScreenContainer>
   );
 }
@@ -130,6 +146,12 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 12,
+    color: '#FFFFFF',
+    backgroundColor: '#aad0d2',
+  }, 
+  buttonContainerDisabled: {
+    marginTop: 12,
+    backgroundColor: '#808484bd',
   },
   helpText: {
     textAlign: 'center',
