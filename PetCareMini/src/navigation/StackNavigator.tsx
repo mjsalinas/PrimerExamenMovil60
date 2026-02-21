@@ -8,7 +8,7 @@ import TabsNavigator from './TabsNavigator';
 import ProfileScreen from '../screens/ProfileScreen';
 
 export type RootStackParamList = {
-  Login: {email: String};
+  Login: { email: undefined };
   Tabs: undefined;
   Profile: undefined;
 };
