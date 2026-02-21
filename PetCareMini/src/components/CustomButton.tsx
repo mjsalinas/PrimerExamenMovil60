@@ -46,7 +46,11 @@ export default function CustomButton({
       disabled={disabled}
       activeOpacity={0.7}
     >
-      <Text style={[styles.baseText, textStyle, disabled && styles.disabledText]}>
+      <Text  style={[
+    styles.base,
+    variant === 'primary' ? styles.primary : styles.secondary,
+    disabled && styles.disabledText ,
+  ]}>
         {title}
       </Text>
     </TouchableOpacity>

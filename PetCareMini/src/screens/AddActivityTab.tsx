@@ -53,7 +53,8 @@ export default function AddActivityTab({ navigation }: any) {
     // Limpiar inputs
     setActivityTitle('');
     setNotes('');
-    setSubmitted(false);
+    setSubmitted(false); 
+    Alert.alert("Confirmación", "La actividad se registró correctamente.");
 
     // Confirmación
   };
@@ -84,11 +85,11 @@ export default function AddActivityTab({ navigation }: any) {
         />
 
         {/* --- Ternario: botón deshabilitado si no es válido --- */}
-        <View style={styles.buttonContainer}>
+        <View  style={[styles.buttonContainer, !isValid && styles.buttonContainerDisabled]}>
           <CustomButton
             title="Guardar Actividad"
-            onPress={()=>{}}
-            disabled={isValid}
+            onPress={handleSave}
+            disabled={!isValid}
             variant="primary"
           />
         </View>
@@ -128,5 +129,21 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 16,
-  },
+  }, 
+
+  buttonContainerDisabled: {
+    marginTop: 16,
+  }, 
+
 });
+
+
+  // buttonContainer: {
+  //   marginTop: 12,
+  //   color: '#FFFFFF',
+  //   backgroundColor: '#aad0d2',
+  // }, 
+  // buttonContainerDisabled: {
+  //   marginTop: 12,
+  //   backgroundColor: '#808484bd',
+  // },
