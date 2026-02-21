@@ -79,5 +79,8 @@ const styles = StyleSheet.create({
   secondaryText: {
     color: '#4A90D9',
   },
+  disabledText:{
+    opacity: 0.5,
+  }
   
 });

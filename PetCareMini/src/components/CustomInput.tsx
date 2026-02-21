@@ -45,6 +45,7 @@ export default function CustomInput({
   const isSecure = type === 'password' && !showPassword;
 
   return (
+    <>
       <View style={[styles.inputWrapper, error ? styles.inputError : styles.inputNormal]}>
         <TextInput
           style={styles.input}
@@ -70,7 +71,8 @@ export default function CustomInput({
           </TouchableOpacity>
         )}
       </View>
-      <Text style={styles.errorText}>{error}</Text>
+      {error ? <Text style={styles.errorText}>{error}</Text> : null}
+      </>
   );
 }
 
