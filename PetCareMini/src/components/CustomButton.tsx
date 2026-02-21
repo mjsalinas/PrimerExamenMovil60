@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     color: '#4A90D9',
   },
   disabledText: {
-    color: '#676767'
+    color: '#565656'
   }
   
 });
