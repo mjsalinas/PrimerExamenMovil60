@@ -69,6 +69,7 @@ export default function CustomInput({
             />
           </TouchableOpacity>
         )}
+        {/* El Text estaba fuera de la etiqueta View se corrigio el error colocando la etiqueta dentro del View */}
         <Text style={styles.errorText}>{error}</Text>
       </View>
       
