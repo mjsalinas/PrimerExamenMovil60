@@ -1,6 +1,7 @@
 // ============================================
 // Pantalla: HomeTab (Checklist diaria)
 // ============================================
+import CustomButton from '../components/CustomButton';
 import { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
@@ -23,7 +24,7 @@ export default function HomeTab({ navigation }: any) {
   const toggleItemStatus = (id: string) => {
     setChecklist((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, done: item.done } : item
+        item.id === id ? { ...item, done: !item.done } : item
       )
     );
   };
