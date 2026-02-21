@@ -45,35 +45,35 @@ export default function CustomInput({
   const isSecure = type === 'password' && !showPassword;
 
   return (
-      <View style={[styles.inputWrapper, error ? styles.inputError : styles.inputNormal]}>
-        <TextInput
-          style={styles.input}
-          value={value}
-          placeholder={placeholder}
-          onChangeText={onChangeText}
-          keyboardType={getKeyboardType()}
-          secureTextEntry={isSecure}
-          autoCapitalize={type === 'email' ? 'none' : 'sentences'}
-          placeholderTextColor="#90A4AE"
-        />
-        {/* Toggle ojo para password */}
-        {type === 'password' && (
-          <TouchableOpacity
-            onPress={() => setShowPassword(!showPassword)}
-            style={styles.eyeButton}
-          >
-            <Ionicons
-              name={showPassword ? 'eye-outline' : 'eye-outline'}
-              size={22}
-              color="#607D8B"
-            />
-          </TouchableOpacity>
-        )}
-        {/* El Text estaba fuera de la etiqueta View se corrigio el error colocando la etiqueta dentro del View */}
-        {/* <Text style={styles.errorText}>{error}</Text> */}
-        {!!error && <Text style={styles.errorText}>{error}</Text>}
-      </View>
-      
+    <View style={[styles.inputWrapper, error ? styles.inputError : styles.inputNormal]}>
+      <TextInput
+        style={styles.input}
+        value={value}
+        placeholder={placeholder}
+        onChangeText={onChangeText}
+        keyboardType={getKeyboardType()}
+        secureTextEntry={isSecure}
+        autoCapitalize={type === 'email' ? 'none' : 'sentences'}
+        placeholderTextColor="#90A4AE"
+      />
+      {/* Toggle ojo para password */}
+      {type === 'password' && (
+        <TouchableOpacity
+          onPress={() => setShowPassword(!showPassword)}
+          style={styles.eyeButton}
+        >
+          <Ionicons
+            name={showPassword ? 'eye-off-outline' : 'eye-outline'}
+            size={22}
+            color="#607D8B"
+          />
+        </TouchableOpacity>
+      )}
+      {/* El Text estaba fuera de la etiqueta View se corrigio el error colocando la etiqueta dentro del View */}
+      {/* <Text style={styles.errorText}>{error}</Text> */}
+      {!!error && <Text style={styles.errorText}>{error}</Text>}
+    </View>
+
   );
 }
 
