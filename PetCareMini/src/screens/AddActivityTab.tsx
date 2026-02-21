@@ -33,7 +33,9 @@ export default function AddActivityTab({ navigation }: any) {
   /** Guardar la actividad */
   const handleSave = () => {
     setSubmitted(true);
-    if (!isValid) return;
+        if (!isValid){ 
+          Alert.alert("Formulario Incompleto","Ingrese Actividad")
+        return;}
 
     const newActivity: Activity = {
       id: Date.now().toString(),
@@ -88,7 +90,7 @@ export default function AddActivityTab({ navigation }: any) {
           <CustomButton
             title="Guardar Actividad"
             onPress={handleSave}
-            disabled={isValid}
+            disabled={!isValid}
             variant="primary"
           />
         </View>
