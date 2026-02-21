@@ -27,7 +27,7 @@ export default function LoginScreen({ navigation }: any) {
       : '';
 
   // --- Ternario: determinar si el formulario es válido ---
-  const isFormValid = email.includes('@') && password.length >= 6;
+  const isFormValid = email.includes('@') &&  password.length >= 6;
 
   /** Manejar el intento de inicio de sesión */
   const handleLogin = () => {
@@ -74,7 +74,7 @@ export default function LoginScreen({ navigation }: any) {
           <CustomButton
             title="Iniciar Sesión"
             onPress={handleLogin}
-            disabled={isFormValid}
+            // disabled={isFormValid}
             variant="primary"
           />
         </View>
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   buttonContainer: {
+    backgroundColor:"gray",
     marginTop: 12,
   },
   helpText: {
