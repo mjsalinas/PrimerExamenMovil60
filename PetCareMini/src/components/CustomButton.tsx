@@ -30,7 +30,7 @@ export default function CustomButton({
   // --- Ternario: estilo del contenedor según variante y estado disabled ---
   const buttonStyle: ViewStyle = {
     ...(variant === 'primary' ? styles.primary : styles.secondary),
-    ...(disabled ? {} : {}),
+    ...(disabled ? styles.disabledButton : {}),
   };
 
   // --- Ternario: color del texto según variante ---
@@ -42,7 +42,7 @@ export default function CustomButton({
       style={[styles.base , buttonStyle]}
       onPress={onPress}
       disabled={disabled}
-      activeOpacity={0.7}
+      activeOpacity={disabled ? 1: 0.7}
     >
       <Text style={[styles.baseText, textStyle, disabled && styles.disabledText]}>
         {title}
@@ -82,4 +82,9 @@ const styles = StyleSheet.create({
    disabledText: {
     color: '#d94a5d',
   },
+   disabledButton: {
+    backgroundColor: '#B0BEC5', 
+    borderColor: '#B0BEC5',
+  },
+
 });

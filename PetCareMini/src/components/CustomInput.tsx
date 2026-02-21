@@ -64,7 +64,7 @@ export default function CustomInput({
             style={styles.eyeButton}
           >
             <Ionicons
-              name={showPassword ? 'eye-outline' : 'eye-off'}
+              name={showPassword ? 'eye-outline' : 'eye'}
               size={22}
               color="#607D8B"
             />
