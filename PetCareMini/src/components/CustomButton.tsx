@@ -62,11 +62,15 @@ const styles = StyleSheet.create({
   },
   primary: {
     backgroundColor: '#4A90D9',
+    borderColor: "black",
+    borderWidth: 2
+    
   },
   secondary: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#blue',
     borderWidth: 2,
     borderColor: '#4A90D9',
+    
   },
   
   baseText: {
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   primaryText: {
-    color: '#FFFFFF',
+    color: 'black',
   },
   secondaryText: {
     color: '#4A90D9',
