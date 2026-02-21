@@ -40,6 +40,7 @@ export default function ProfileScreen({ navigation }: any) {
     if (ageError) return;
     setEditing(false);
     setSaved(true);
+    alert(" Perfil actualizado correctamente")
   };
 
   return (
@@ -67,7 +68,7 @@ export default function ProfileScreen({ navigation }: any) {
 
         <Text style={styles.label}>Nombre</Text>
         <CustomInput
-          value={''}
+          value={profile.name}
           placeholder="Nombre de tu mascota"
           onChangeText={(v) => {
             setEditing(true);
@@ -84,7 +85,7 @@ export default function ProfileScreen({ navigation }: any) {
             updateField('age', v);
           }}
           type="number"
-          error={""}
+          error={ageError}
         />
 
         <Text style={styles.label}>Tipo / Raza</Text>
@@ -104,7 +105,7 @@ export default function ProfileScreen({ navigation }: any) {
             <CustomButton
               title="Guardar Cambios"
               onPress={handleSave}
-              variant="primary"
+              variant={!(ageError !== '') ? "primary" : "secondary"}
               disabled={ageError !== ''}
             />
           ) : null}
