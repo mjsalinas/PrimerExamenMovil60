@@ -73,6 +73,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
+  disabledText:{
+    color: '#8b8484',
+  },
   primaryText: {
     color: '#FFFFFF',
   },
