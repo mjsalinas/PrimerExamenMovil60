@@ -31,7 +31,7 @@ export default function StackNavigator() {
         component={TabsNavigator}
         options={{
           title: '🐾 PetCare Mini',
-          headerLeft: () => null,
+          headerBackVisible: false,
           headerStyle: { backgroundColor: '#4A90D9' },
           headerTintColor: '#FFFFFF',
           headerTitleStyle: { fontWeight: '700' },
