@@ -69,8 +69,9 @@ export default function CustomInput({
             />
           </TouchableOpacity>
         )}
+        <Text style={styles.errorText}>{error}</Text>
       </View>
-      <Text style={styles.errorText}>{error}</Text>
+      
   );
 }
 
