@@ -19,12 +19,14 @@ export default function StackNavigator() {
   return (
     <Stack.Navigator
       initialRouteName="Login"
-      screenOptions={{ headerShown: true }}
+      screenOptions={{ headerShown: true, headerLeft: () => null}}
     >
-      <Stack.Screen
+      <Stack.Screen 
         name="Login"
         component={LoginScreen}
-        options={{ title: 'Inicio de Sesión' }}
+        options={{ title: 'Inicio de Sesión',
+        headerLeft: () => null}}
+        
       />
       <Stack.Screen
         name="Tabs"
