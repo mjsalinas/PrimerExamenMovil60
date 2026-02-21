@@ -74,10 +74,20 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   primaryText: {
-    color: '#FFFFFF',
+    color: '#ffffff',
+    backgroundColor: '#000000',
+    width: "50%",
+     borderRadius: 8,
+        paddingVertical: 15,
+        alignItems:'center',
   },
   secondaryText: {
     color: '#4A90D9',
   },
+  disabledText:{
+       color: '#ccff00',
+
+  }
+  
   
 });

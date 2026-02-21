@@ -54,7 +54,7 @@ export default function LoginScreen({ navigation }: any) {
 
         {/* Input de correo */}
         <CustomInput
-          value={''}
+          value={email}
           placeholder="Correo electrónico"
           onChangeText={setEmail}
           type="email"
@@ -71,11 +71,11 @@ export default function LoginScreen({ navigation }: any) {
         />
 
         <View style={styles.buttonContainer}>
-          <CustomButton
+          <CustomButton 
             title="Iniciar Sesión"
             onPress={handleLogin}
             disabled={isFormValid}
-            variant="primary"
+            variant={"primary"}
           />
         </View>
 
@@ -130,6 +130,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 12,
+    color: 'red'
   },
   helpText: {
     textAlign: 'center',
