@@ -14,7 +14,8 @@ interface CustomButtonProps {
   title: string;
   onPress: () => void;
   disabled?: boolean;
-  variant: 'primary' | 'secondary';
+  disablesText?: boolean;
+  variant?: 'primary' | 'secondary';
 }
 
 /**
@@ -79,5 +80,8 @@ const styles = StyleSheet.create({
   secondaryText: {
     color: '#4A90D9',
   },
+  disabledText:{
+    
+  }
   
 });

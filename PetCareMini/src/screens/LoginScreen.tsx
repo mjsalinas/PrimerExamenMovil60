@@ -130,6 +130,10 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 12,
+    borderRadius: 16,
+    padding: 24,
+    color: '#d02727',
+    backgroundColor: 'blue'
   },
   helpText: {
     textAlign: 'center',
