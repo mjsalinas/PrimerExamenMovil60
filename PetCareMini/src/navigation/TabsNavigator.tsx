@@ -29,6 +29,7 @@ export default function TabsNavigator() {
           paddingBottom: 6,
           paddingTop: 6,
           height: 60,
+          
         },
         tabBarLabelStyle: {
           fontSize: 12,

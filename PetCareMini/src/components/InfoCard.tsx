@@ -47,7 +47,7 @@ export default function InfoCard({
   // Si tiene onPress, envolver en TouchableOpacity
   if (onPress) {
     return (
-      <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+      <TouchableOpacity onPress={(onPress)} activeOpacity={0.7}>
         {content}
       </TouchableOpacity>
     );
@@ -76,8 +76,8 @@ const styles = StyleSheet.create({
     borderColor: '#E0E0E0',
   },
   cardDone: {
-    backgroundColor: '#E8F5E9',
-    borderColor: '#81C784',
+    backgroundColor: '#81C784',
+    borderColor: 'green',
   },
   leftContent: {
     flex: 1,
