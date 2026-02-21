@@ -28,14 +28,18 @@ export default function CustomButton({
   variant = 'primary',
 }: CustomButtonProps) {
   // --- Ternario: estilo del contenedor según variante y estado disabled ---
-  const buttonStyle: ViewStyle = {
-    ...(variant === 'primary' ? styles.primary : styles.secondary),
-    ...(disabled ? {} : {}),
-  };
+ const buttonStyle: ViewStyle = disabled
+  ? { backgroundColor: '#B0BEC5', borderColor: '#B0BEC5' } // gris
+  : variant === 'primary'
+  ? styles.primary
+  : styles.secondary;
 
   // --- Ternario: color del texto según variante ---
-  const textStyle: TextStyle =
-    variant === 'primary' ? styles.primaryText : styles.secondaryText;
+  const textStyle: TextStyle = disabled
+  ? { color: '#ECEFF1' } // texto claro
+  : variant === 'primary'
+  ? styles.primaryText
+  : styles.secondaryText;
 
   return (
     <TouchableOpacity
@@ -44,10 +48,8 @@ export default function CustomButton({
       disabled={disabled}
       activeOpacity={0.7}
     >
-      <Text style={[styles.baseText, textStyle, disabled && styles.primary]}>
-        {title}
-      </Text>
-    </TouchableOpacity>
+      <Text style={[styles.baseText, textStyle]}>{title}</Text>
+</TouchableOpacity>
   );
 }
 

@@ -2,13 +2,13 @@
 // Navegación: StackNavigator
 // Stack principal con Login, Tabs y Profile
 // ============================================
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from '../screens/LoginScreen';
 import TabsNavigator from './TabsNavigator';
 import ProfileScreen from '../screens/ProfileScreen';
 
 export type RootStackParamList = {
-  Login: {email: String};
+  Login: { email: String };
   Tabs: undefined;
   Profile: undefined;
 };
@@ -32,6 +32,8 @@ export default function StackNavigator() {
         options={{
           title: '🐾 PetCare Mini',
           headerLeft: () => null,
+          headerBackVisible: false,   // 👈 oculta botón back
+          gestureEnabled: false,      // 👈 bloquea swipe back
           headerStyle: { backgroundColor: '#4A90D9' },
           headerTintColor: '#FFFFFF',
           headerTitleStyle: { fontWeight: '700' },
