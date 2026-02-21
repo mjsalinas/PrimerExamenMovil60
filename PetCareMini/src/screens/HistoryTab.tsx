@@ -32,9 +32,9 @@ export default function HistoryTab({ navigation }: any) {
       ) : (
         <View>
           <Text style={styles.countText}>
-            {activities.length}{' '}
-            {activities.length === 1 ? 'actividad' : 'actividades'} registrada
-            {activities.length === 1 ? '' : 's'}
+          {activities.length}{' '}
+        {activities.length === 1 ? 'actividad' : 'actividades'} registrada
+        {activities.length === 1 ? '' : 's'}
           </Text>
 
           {activities.map((activity) => (
@@ -47,10 +47,11 @@ export default function HistoryTab({ navigation }: any) {
                 rightText={activity.date}
               />
               {/* Botón eliminar */}
-              <CustomButton
-                title="🗑 Eliminar"
-                onPress={() => deleteActivity(activity.id)}
-              />
+             <CustomButton
+  title="🗑 Eliminar"
+  onPress={() => deleteActivity(activity.id)}
+  variant="secondary"
+/>
             </View>
           ))}
         </View>
