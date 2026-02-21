@@ -19,7 +19,7 @@ export default function AddActivityTab({ navigation }: any) {
   // --- Estado local ---
   const [activityTitle, setActivityTitle] = useState('');
   const [notes, setNotes] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(true);
 
   // --- Ternario: error si el título está vacío ---
   const titleError =
@@ -33,6 +33,7 @@ export default function AddActivityTab({ navigation }: any) {
   /** Guardar la actividad */
   const handleSave = () => {
     setSubmitted(true);
+    alert('La actividad se registro con exito');
     if (!isValid) return;
 
     const newActivity: Activity = {
@@ -87,8 +88,8 @@ export default function AddActivityTab({ navigation }: any) {
         <View style={styles.buttonContainer}>
           <CustomButton
             title="Guardar Actividad"
-            onPress={()=>{}}
-            disabled={isValid}
+            onPress={handleSave}
+            disabled={!isValid}
             variant="primary"
           />
         </View>

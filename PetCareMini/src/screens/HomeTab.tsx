@@ -7,18 +7,22 @@ import ScreenContainer from '../components/ScreenContainer';
 import InfoCard from '../components/InfoCard';
 import { ChecklistItem } from '../types';
 import CustomButton from '../components/CustomButton';
+import { useActivities } from '../context/ActivityContext';
 
 /**
  * Pantalla principal con la checklist diaria del cuidado de la mascota.
  * Demuestra uso de useState, ternarios y renderizado condicionado.
  */
 export default function HomeTab({ navigation }: any) {
+  const { activities } = useActivities();
+
   // --- Estado: lista de ítems del checklist ---
   const [checklist, setChecklist] = useState<ChecklistItem[]>([
     { id: '1', title: '💧 Agua fresca', done: false },
     { id: '2', title: '🍖 Comida', done: false },
     { id: '3', title: '🚶 Paseo', done: false },
     { id: '4', title: '💊 Medicamento', done: false },
+    
   ]);
 
   const toggleItemStatus = (id: string) => {
