@@ -56,6 +56,7 @@ export default function AddActivityTab({ navigation }: any) {
     setSubmitted(false);
 
     // Confirmación
+    alert("La actividad se registro correctamente.")
   };
 
   return (
@@ -87,9 +88,9 @@ export default function AddActivityTab({ navigation }: any) {
         <View style={styles.buttonContainer}>
           <CustomButton
             title="Guardar Actividad"
-            onPress={()=>{}}
-            disabled={isValid}
-            variant="primary"
+            onPress={handleSave}
+            disabled={!isValid}
+            variant={isValid ? "primary": "secondary"}
           />
         </View>
       </View>
